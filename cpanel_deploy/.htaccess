@@ -1,0 +1,31 @@
+# ==============================================================================
+# SoloPromo - Configuración Apache para cPanel (public_html)
+# Soporte para React SPA + Backend RESTful PHP en /api/ + Uploads WebP
+# ==============================================================================
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # 1. Rutas de la API en PHP: delegar a api/index.php
+  RewriteCond %{REQUEST_URI} ^/api [NC]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^api/(.*)$ api/index.php?route=$1 [QSA,L]
+
+  # 2. Servir archivos estáticos directamente (js, css, uploads, webp, svg, etc.)
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # 3. Todo lo demás se envía al index.html de React (SPA Routing)
+  RewriteRule ^ index.html [L]
+</IfModule>
+
+# Compresión GZIP para alta velocidad
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json image/svg+xml
+</IfModule>
+
+# Seguridad y prevención de listado de directorios
+Options -Indexes

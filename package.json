@@ -1,0 +1,24 @@
+{
+  "name": "solopromo-plataforma",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "npm --prefix frontend run dev",
+    "dev:api": "php -S 127.0.0.1:8000 -t backend",
+    "build": "npm --prefix frontend run build",
+    "build:cpanel": "node scripts/build-cpanel.js",
+    "db:migrate": "php backend/database/migrate.php"
+  },
+  "keywords": [
+    "solopromo",
+    "soporte-promocional",
+    "react",
+    "php",
+    "mysql",
+    "cpanel",
+    "trade-marketing"
+  ],
+  "author": "Soporte Promocional S.A.C.",
+  "license": "ISC"
+}

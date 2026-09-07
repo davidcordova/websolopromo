@@ -1,0 +1,249 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: 'Source Sans 3', 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-sans: 'Source Sans 3', 'Segoe UI', 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+@layer base {
+  :root {
+    --font-heading: 'Source Sans 3', 'Segoe UI', system-ui, -apple-system, sans-serif;
+    --font-sans: 'Source Sans 3', 'Segoe UI', 'Inter', system-ui, sans-serif;
+
+    /* Colores oficiales calibrados del logo */
+    --brand-soporte-blue: #55a2dc;
+    --brand-promo-grey: #545456;
+    --dot-grey: #676767;
+    --dot-blue: #4878ac;
+    --dot-green: #83a33c;
+    --dot-orange: #b56635;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #f8fafc;
+    color: #1e293b;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6, .font-display {
+    font-family: var(--font-heading);
+    letter-spacing: -0.012em;
+  }
+}
+
+/* Custom scrollbar para tema claro */
+::-webkit-scrollbar {
+  width: 9px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #55a2dc;
+}
+
+/* Cards con diseño UX/UI premium para tema claro */
+.light-card {
+  background: #ffffff;
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05), 0 2px 6px -1px rgba(15, 23, 42, 0.03);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.light-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(85, 162, 220, 0.5);
+  box-shadow: 0 16px 32px -8px rgba(85, 162, 220, 0.18), 0 4px 12px -2px rgba(15, 23, 42, 0.06);
+}
+
+/* Degradados corporativos de texto */
+.text-gradient-brand {
+  background: linear-gradient(135deg, #2563eb 0%, #4a9cd7 50%, #0ea5e9 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-soporte {
+  color: #4a9cd7;
+}
+
+/* Marquee continuous animation */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: 200%;
+  animation: marquee 35s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Animaciones flotantes suaves para efectos Parallax */
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(1.2deg);
+  }
+}
+
+@keyframes float-reverse {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(12px) rotate(-1.2deg);
+  }
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.9);
+    box-shadow: 0 0 0 0 rgba(85, 162, 220, 0.6);
+  }
+  70% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 14px rgba(85, 162, 220, 0);
+  }
+  100% {
+    transform: scale(0.9);
+    box-shadow: 0 0 0 0 rgba(85, 162, 220, 0);
+  }
+}
+
+@keyframes shimmer-sweep {
+  0% {
+    transform: translateX(-150%) skewX(-20deg);
+  }
+  100% {
+    transform: translateX(250%) skewX(-20deg);
+  }
+}
+
+.animate-float {
+  animation: float-slow 6s ease-in-out infinite;
+}
+
+.animate-float-fast {
+  animation: float-slow 4s ease-in-out infinite;
+}
+
+.animate-float-reverse {
+  animation: float-reverse 7s ease-in-out infinite;
+}
+
+.animate-pulse-ring {
+  animation: pulse-ring 2.8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Efecto de resplandor / brillo al pasar el cursor */
+.shine-hover {
+  position: relative;
+  overflow: hidden;
+}
+
+.shine-hover::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.35) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: translateX(-150%) skewX(-20deg);
+  pointer-events: none;
+}
+
+.shine-hover:hover::after {
+  animation: shimmer-sweep 1s ease-in-out;
+}
+
+/* Utilidades para revelación progresiva al hacer scroll */
+.reveal-init {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-init.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Transiciones optimizadas por GPU */
+.parallax-element {
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  transition: transform 0.15s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Cuadrícula tecnológica sutil para la portada de vanguardia */
+.bg-tech-grid {
+  background-image: 
+    linear-gradient(to right, rgba(85, 162, 220, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(85, 162, 220, 0.08) 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, black 20%, transparent 80%);
+  -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, black 20%, transparent 80%);
+}
+
+/* Efecto de barrido de haz de luz / scanline sutil en el showcase */
+@keyframes scanline-pass {
+  0% {
+    top: -10%;
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.6;
+  }
+  85% {
+    opacity: 0.6;
+  }
+  100% {
+    top: 110%;
+    opacity: 0;
+  }
+}
+
+.animate-scanline {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, rgba(85, 162, 220, 0.8) 50%, transparent 100%);
+  box-shadow: 0 0 15px 3px rgba(85, 162, 220, 0.5);
+  animation: scanline-pass 6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* Animación de flujo lumínico para la curva de trayectoria (estilo Dribbble) */
+@keyframes flow-dash {
+  to {
+    stroke-dashoffset: -120;
+  }
+}
+
+.animate-trajectory-flow {
+  stroke-dasharray: 10 8;
+  animation: flow-dash 6s linear infinite;
+}
+
+

@@ -1,0 +1,48 @@
+================================================================================
+GUÍA DE DESPLIEGUE EN CPANEL - SOLOPROMO (SOPORTE PROMOCIONAL S.A.C.)
+================================================================================
+
+Todo el contenido de esta carpeta (cpanel_deploy) está 100% listo para subirse
+directamente a la carpeta "public_html" de tu cuenta en cPanel.
+
+PASO 1: SUBIR ARCHIVOS
+--------------------------------------------------------------------------------
+1. Comprime los archivos dentro de "cpanel_deploy" en un archivo ZIP.
+2. Ingresa a cPanel -> Administrador de Archivos -> Ingresa a "public_html".
+3. Carga el archivo ZIP y descomprímelo directamente en "public_html".
+   Asegúrate de que el archivo .htaccess, index.html, la carpeta "api" y la
+   carpeta "uploads" queden en la raíz de public_html.
+
+PASO 2: CONFIGURAR BASE DE DATOS MYSQL EN CPANEL
+--------------------------------------------------------------------------------
+1. En cPanel, dirígete a "Bases de datos MySQL".
+2. Crea una nueva base de datos (por ejemplo: usuario_solopromo).
+3. Crea un nuevo usuario MySQL con contraseña segura.
+4. Asocia el usuario a la base de datos con "TODOS LOS PRIVILEGIOS".
+5. Ingresa a "phpMyAdmin" desde cPanel.
+6. Selecciona tu base de datos y dirígete a la pestaña "Importar".
+7. Importa primero: database/schema.sql
+8. Luego importa: database/seed.sql
+
+PASO 3: CONFIGURAR CREDENCIALES EN EL SERVIDOR
+--------------------------------------------------------------------------------
+En cPanel -> Administrador de Archivos -> public_html/api/config/:
+Crea un archivo llamado "config.php" con tus datos de cPanel:
+
+<?php
+return [
+    'host'   => 'localhost',
+    'port'   => '3306',
+    'dbname' => 'tu_usuario_solopromo',
+    'user'   => 'tu_usuario_db',
+    'pass'   => 'tu_password_segura'
+];
+
+PASO 4: ACCESO AL PANEL DE ADMINISTRACIÓN (CMS)
+--------------------------------------------------------------------------------
+- URL de acceso: https://tudominio.com/#admin
+- Usuario: admin
+- Contraseña: M1un1c4cl4v3
+
+¡Listo! Tu sitio web en solopromo.net estará activo, rápido y conectado a MySQL.
+================================================================================
