@@ -29,13 +29,6 @@ export default function InfrastructureSection() {
           </p>
         </div>
 
-        {/* Cita textual de la página 5 del PDF */}
-        <div className="mb-12 p-6 rounded-2xl bg-gradient-to-r from-sky-50 via-white to-sky-50 border border-sky-200 text-center max-w-4xl mx-auto shadow-xs">
-          <p className="text-sm sm:text-base font-bold text-slate-800">
-            "En nuestro directorio, se reúnen nuestros clientes (KAM) con el Back Office y coordinan las estrategias del negocio."
-          </p>
-        </div>
-
         {/* Selector de Espacios e Interfaz Visual con Fotos Reales Ultra-HD */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           

@@ -219,56 +219,28 @@ export default function ClientsMarquee() {
                 </div>
               </div>
 
-              {/* Resumen del Caso y Solución Implementada */}
-              <div className="bg-white/90 backdrop-blur-sm rounded-xl p-4 sm:p-5 border border-slate-200/90 mb-6 shadow-xs">
-                <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">
-                  {selectedClient.summary}
-                </p>
-              </div>
+              {/* Resumen del Caso Escueto y Directo */}
+              <p className="text-sm text-slate-700 leading-relaxed mb-5">
+                {selectedClient.summary}
+              </p>
 
-              {/* Métricas Clave de Desempeño */}
-              <div className="grid grid-cols-3 gap-3 mb-6">
-                <div className="bg-white/90 backdrop-blur-sm rounded-xl p-3 border border-slate-200/90 text-center shadow-xs">
-                  <span className="block text-base sm:text-lg font-black text-sky-700 tracking-tight font-display">
+              {/* 2 Métricas Clave de Impacto */}
+              <div className="grid grid-cols-2 gap-3 mb-5">
+                <div className="bg-sky-50/70 rounded-xl p-3 border border-sky-100 text-left">
+                  <div className="text-lg sm:text-xl font-black text-[#2563EB] font-display">
                     {selectedClient.metrics.pdv}
-                  </span>
-                  <span className="text-[10px] sm:text-xs text-slate-500 font-medium">
-                    Puntos de Venta
-                  </span>
+                  </div>
+                  <div className="text-[11px] text-slate-600 font-semibold">
+                    Puntos de Venta Activos
+                  </div>
                 </div>
-                <div className="bg-white/90 backdrop-blur-sm rounded-xl p-3 border border-slate-200/90 text-center shadow-xs">
-                  <span className="block text-base sm:text-lg font-black text-emerald-700 tracking-tight font-display">
-                    {selectedClient.metrics.coverage}
-                  </span>
-                  <span className="text-[10px] sm:text-xs text-slate-500 font-medium">
-                    Cobertura Geográfica
-                  </span>
-                </div>
-                <div className="bg-white/90 backdrop-blur-sm rounded-xl p-3 border border-slate-200/90 text-center shadow-xs">
-                  <span className="block text-base sm:text-lg font-black text-amber-700 tracking-tight font-display">
+                <div className="bg-emerald-50/70 rounded-xl p-3 border border-emerald-100 text-left">
+                  <div className="text-lg sm:text-xl font-black text-emerald-700 font-display">
                     {selectedClient.metrics.impact}
-                  </span>
-                  <span className="text-[10px] sm:text-xs text-slate-500 font-medium">
-                    Rendimiento en Tienda
-                  </span>
-                </div>
-              </div>
-
-              {/* Pilares Desplegados */}
-              <div className="mb-4">
-                <span className="block text-xs font-bold text-slate-600 uppercase tracking-wider mb-2">
-                  Pilares de Servicio Desplegados:
-                </span>
-                <div className="flex flex-wrap gap-1.5 sm:gap-2">
-                  {selectedClient.servicesDeployed.map((service, i) => (
-                    <span
-                      key={i}
-                      className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-semibold bg-sky-50 text-sky-900 border border-sky-200/80 shadow-2xs"
-                    >
-                      <CheckCircle2 className="w-3 h-3 text-[#55A2DC] shrink-0" />
-                      {service}
-                    </span>
-                  ))}
+                  </div>
+                  <div className="text-[11px] text-slate-600 font-semibold">
+                    Impacto en Sell-Out
+                  </div>
                 </div>
               </div>
 
