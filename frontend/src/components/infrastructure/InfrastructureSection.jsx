@@ -22,10 +22,10 @@ export default function InfrastructureSection() {
             Nuestras Instalaciones
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold text-slate-900 tracking-tight">
-            Infraestructura Corporativa de Primer Nivel
+            Infraestructura y Capacidad Operativa
           </h2>
           <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-            Espacios diseñados para que nuestros clientes (KAM) se reúnan con el Back Office, planifiquen estrategias y capaciten a la fuerza de ventas con la máxima comodidad.
+            Instalaciones propias diseñadas para la gestión estratégica de cuentas (KAM), soporte continuo de Back Office y capacitación certificada de promotores antes de su despliegue en retail.
           </p>
         </div>
 

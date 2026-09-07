@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from './components/layout/Navbar';
 import Hero from './components/hero/Hero';
-import AboutUs from './components/about/AboutUs';
+import WhyUsSection from './components/whyus/WhyUsSection';
 import ClientsMarquee from './components/clients/ClientsMarquee';
 import ServicesSection from './components/services/ServicesSection';
+import WorkflowSection from './components/workflow/WorkflowSection';
+import PortfolioSection from './components/portfolio/PortfolioSection';
+import TestimonialsSection from './components/testimonials/TestimonialsSection';
 import CoverageMap from './components/coverage/CoverageMap';
 import InfrastructureSection from './components/infrastructure/InfrastructureSection';
-import PortfolioSection from './components/portfolio/PortfolioSection';
+import AboutUs from './components/about/AboutUs';
 import ContactSection from './components/contact/ContactSection';
 import Footer from './components/layout/Footer';
 import FloatingWhatsApp from './components/common/FloatingWhatsApp';
@@ -129,25 +132,34 @@ export default function App() {
         {/* 1. Hero Principal con Estadísticas y CTA */}
         <Hero onOpenQuoteModal={handleOpenQuote} />
 
-        {/* 2. ¿Quiénes Somos? Nosotros & 12 Años de Experiencia */}
-        <AboutUs />
+        {/* 2. ¿Por qué las marcas líderes trabajan con nosotros? (Diferenciación) */}
+        <WhyUsSection onOpenQuoteModal={handleOpenQuote} />
 
-        {/* 3. Clientes Globales (Marquee) */}
+        {/* 3. Socios Estratégicos & Marcas Líderes (Marquee + Despliegue Retail) */}
         <ClientsMarquee />
 
-        {/* 4. Los 8 Pilares de Servicios */}
+        {/* 4. Nuestros 8 Pilares de Servicio */}
         <ServicesSection onSelectServiceToQuote={handleSelectServiceToQuote} />
 
-        {/* 5. Cobertura a Nivel Nacional (Perú Interactivo) */}
-        <CoverageMap />
+        {/* 5. Cómo Trabajamos (Metodología en 5 pasos) */}
+        <WorkflowSection onOpenQuoteModal={handleOpenQuote} />
 
-        {/* 6. Nuestras Instalaciones / Infraestructura */}
-        <InfrastructureSection />
-
-        {/* 7. Portafolio y Casos de Éxito */}
+        {/* 6. Portafolio y Casos de Éxito en Retail */}
         <PortfolioSection />
 
-        {/* 8. Cotizador y Formulario Conectado a MySQL */}
+        {/* 7. Prueba Social & Testimonios con Métricas */}
+        <TestimonialsSection />
+
+        {/* 8. Cobertura a Nivel Nacional (Llegamos donde tu marca necesita estar) */}
+        <CoverageMap />
+
+        {/* 9. Infraestructura y Capacidad Operativa */}
+        <InfrastructureSection />
+
+        {/* 10. ¿Quiénes Somos? Nosotros & 12 Años de Experiencia */}
+        <AboutUs />
+
+        {/* 11. ¿Tienes un proyecto en mente? Formulario Conectado a MySQL */}
         <ContactSection preSelectedService={preSelectedService} />
       </main>
 

@@ -11,7 +11,9 @@ const PORTFOLIO_PROJECTS = [
     scope: "Falabella, Ripley, Hiraoka",
     image: "/images/assets/trade_marketing_canon.webp",
     desc: "Despliegue de promotores especializados en cámaras réflex, mirrorless y ecosistema de impresión con capacitación continua.",
-    tag: "Retail Moderno"
+    tag: "Retail Moderno",
+    result: "+38.4% Sell-Out",
+    metricBadge: "Aceleración de Venta"
   },
   {
     id: 2,
@@ -22,7 +24,9 @@ const PORTFOLIO_PROJECTS = [
     scope: "Lanzamiento VIP & Retail",
     image: "/images/assets/eventos_escenario.webp",
     desc: "Producción de evento corporativo y montaje de módulos de exhibición de televisores de ultra alta definición.",
-    tag: "Producción Integral"
+    tag: "Producción Integral",
+    result: "100% Asistencia VIP",
+    metricBadge: "Impacto de Marca"
   },
   {
     id: 3,
@@ -33,7 +37,9 @@ const PORTFOLIO_PROJECTS = [
     scope: "Centros Comerciales",
     image: "/images/assets/btl_photobooth.webp",
     desc: "Cabina de fotos instantáneas brandeada e incentivos de compra inmediata con engagement directo al consumidor.",
-    tag: "Gamificación"
+    tag: "Gamificación",
+    result: "+4,500 Interacciones",
+    metricBadge: "Engagement Directo"
   },
   {
     id: 4,
@@ -44,7 +50,9 @@ const PORTFOLIO_PROJECTS = [
     scope: "Tiendas de Cómputo Especializadas",
     image: "/images/assets/indoor_asus.webp",
     desc: "Módulos arquitectónicos con iluminación LED gamer, cableado invisible y anclajes de seguridad para laptops de alta gama.",
-    tag: "Diseño Retail"
+    tag: "Diseño Retail",
+    result: "12 PDVs Flagship",
+    metricBadge: "Presencia Premium"
   },
   {
     id: 5,
@@ -55,7 +63,9 @@ const PORTFOLIO_PROJECTS = [
     scope: "Canales & Distribuidores",
     image: "/images/assets/merch_motorola.webp",
     desc: "Fabricación de agendas de cuero PU, lapiceros de acabado mate y libretas institucionales de alta calidad.",
-    tag: "Artículos Premium"
+    tag: "Artículos Premium",
+    result: "10,000+ Unidades",
+    metricBadge: "Fidelización B2B"
   },
   {
     id: 6,
@@ -66,7 +76,9 @@ const PORTFOLIO_PROJECTS = [
     scope: "Puntos de Venta Clave",
     image: "/images/assets/trade_marketing_jbl.webp",
     desc: "Islas dinámicas con prueba de sonido en vivo resistente al agua y luces rítmicas integradas al punto de venta.",
-    tag: "Tecnología Interactiva"
+    tag: "Tecnología Interactiva",
+    result: "+29% Conversión",
+    metricBadge: "Experiencia Sonora"
   },
   {
     id: 7,
@@ -77,7 +89,9 @@ const PORTFOLIO_PROJECTS = [
     scope: "Mall Aventura & Jockey Plaza",
     image: "/images/assets/branding_escaleras.webp",
     desc: "Implementación de cajas de luz y gráficas de alta definición en zonas de alto tránsito para maximizar visibilidad.",
-    tag: "Alto Tránsito"
+    tag: "Alto Tránsito",
+    result: "850K Impactos/Mes",
+    metricBadge: "Máxima Visibilidad"
   },
   {
     id: 8,
@@ -88,7 +102,9 @@ const PORTFOLIO_PROJECTS = [
     scope: "Trade & Marketing Directo",
     image: "/images/assets/diseno_catalogo.webp",
     desc: "Diseño editorial de catálogos comerciales con fotografías de producto de alta resolución y estricto control de marca.",
-    tag: "Creatividad Gráfica"
+    tag: "Creatividad Gráfica",
+    result: "100% Fidelidad",
+    metricBadge: "Manual de Marca"
   }
 ];
 
@@ -108,20 +124,20 @@ export default function PortfolioSection() {
   ];
 
   return (
-    <section id="portafolio" className="py-24 relative bg-slate-50/70 border-t border-slate-200/80">
+    <section id="proyectos" className="py-24 relative bg-slate-50/70 border-t border-slate-200/80">
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Encabezado */}
         <div className="text-center max-w-3xl mx-auto mb-12 space-y-3">
           <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-sky-800 bg-sky-50 border border-sky-200 px-3.5 py-1 rounded-full">
-            Casos de Éxito
+            Casos de Éxito & Resultados Comprobados
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold text-slate-900 tracking-tight">
             Nuestros Proyectos en Acción
           </h2>
           <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-            Una muestra visual de las activaciones, módulos, eventos y material corporativo desarrollado para nuestros clientes con imágenes reales de campo en alta definición.
+            Una muestra de las activaciones, módulos de retail, eventos y material de visibilidad ejecutados para marcas globales con resultados de venta verificados.
           </p>
         </div>
 
@@ -172,9 +188,14 @@ export default function PortfolioSection() {
 
                 {/* Contenido */}
                 <div className="p-5 space-y-2">
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-[#55A2DC]">
-                    {project.categoryLabel}
-                  </span>
+                  <div className="flex items-center justify-between">
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-[#55A2DC]">
+                      {project.categoryLabel}
+                    </span>
+                    <span className="text-[10px] font-extrabold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200 font-mono">
+                      {project.result}
+                    </span>
+                  </div>
                   <h3 className="text-sm font-bold text-slate-900 group-hover:text-[#55A2DC] transition-colors leading-snug">
                     {project.title}
                   </h3>
@@ -191,6 +212,25 @@ export default function PortfolioSection() {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* CTA Intermedio de Proyectos */}
+        <div className="mt-14 p-6 sm:p-8 rounded-2xl bg-white border border-slate-200 shadow-sm text-center flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="text-left">
+            <h4 className="text-base sm:text-lg font-bold text-slate-900 font-display">
+              ¿Listo para potenciar la visibilidad de tu marca en retail?
+            </h4>
+            <p className="text-xs sm:text-sm text-slate-600">
+              Coordinemos una reunión con nuestros directores de cuenta y desarrollemos una solución a la medida.
+            </p>
+          </div>
+          <a
+            href="#contacto"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-[#55A2DC] to-[#2563EB] hover:from-[#438bc2] hover:to-[#1d4ed8] text-white text-xs sm:text-sm font-extrabold shadow-md shadow-sky-500/20 hover:scale-[1.02] transition-all shrink-0 cursor-pointer"
+          >
+            <span>Cotizar mi proyecto</span>
+            <ArrowUpRight className="w-4 h-4" />
+          </a>
         </div>
 
       </div>

@@ -55,18 +55,38 @@ export default function CoverageMap() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Encabezado Oficial del PDF */}
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
+        {/* Encabezado Oficial */}
+        <div className="text-center max-w-3xl mx-auto mb-14 space-y-3">
           <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-sky-800 bg-sky-50 border border-sky-200 px-3.5 py-1 rounded-full shadow-2xs">
             <Globe2 className="w-3.5 h-3.5 text-[#55A2DC]" />
-            <span>¿Dónde Estamos? · Macro-Regiones</span>
+            <span>Cobertura Nacional · 4 Macro-Regiones</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold text-slate-900 tracking-tight">
-            Cobertura a Nivel Nacional
+            Llegamos donde tu marca necesita estar
           </h2>
           <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
             Presencia operativa continua y supervisión descentralizada en el norte, centro, sur y oriente del país, asegurando el mismo estándar de excelencia en cada punto de venta.
           </p>
+
+          {/* 4 Métricas Clave de Cobertura */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-3 max-w-2xl mx-auto">
+            <div className="bg-white p-3 rounded-xl border border-slate-200 shadow-2xs text-center">
+              <span className="block font-display font-black text-xl text-[#55A2DC]">18</span>
+              <span className="text-[11px] font-semibold text-slate-600">Departamentos</span>
+            </div>
+            <div className="bg-white p-3 rounded-xl border border-slate-200 shadow-2xs text-center">
+              <span className="block font-display font-black text-xl text-emerald-600">85+</span>
+              <span className="text-[11px] font-semibold text-slate-600">Puntos de Venta</span>
+            </div>
+            <div className="bg-white p-3 rounded-xl border border-slate-200 shadow-2xs text-center">
+              <span className="block font-display font-black text-xl text-[#B56635]">15</span>
+              <span className="text-[11px] font-semibold text-slate-600">Ciudades Clave</span>
+            </div>
+            <div className="bg-white p-3 rounded-xl border border-slate-200 shadow-2xs text-center">
+              <span className="block font-display font-black text-xl text-indigo-600">4</span>
+              <span className="text-[11px] font-semibold text-slate-600">Macro-Regiones</span>
+            </div>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">

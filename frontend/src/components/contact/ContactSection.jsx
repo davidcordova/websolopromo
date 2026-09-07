@@ -80,10 +80,10 @@ export default function ContactSection({ preSelectedService = '' }) {
             Inicia tu Proyecto
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold text-slate-900 tracking-tight">
-            Solicita una Cotización o Asesoría
+            ¿Tienes un proyecto en mente?
           </h2>
           <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-            Diseñamos una propuesta personalizada cuidando tu presupuesto y maximizando el alcance de tu marca en punto de venta.
+            Cuéntanos qué necesitas y nuestro equipo te ayudará a convertirlo en una solución concreta. Respuesta garantizada en menos de 2 horas hábiles.
           </p>
         </div>
 
@@ -346,10 +346,26 @@ export default function ContactSection({ preSelectedService = '' }) {
                   ) : (
                     <>
                       <Send className="w-4 h-4" />
-                      <span>Enviar Solicitud de Cotización</span>
+                      <span>Quiero hablar con un especialista</span>
                     </>
                   )}
                 </button>
+
+                {/* Trust Badges */}
+                <div className="grid grid-cols-3 gap-2 pt-2 text-center">
+                  <div className="p-2 rounded-lg bg-slate-50 border border-slate-200/80 text-[10px] font-bold text-slate-700 flex flex-col sm:flex-row items-center justify-center gap-1">
+                    <span className="text-[#55A2DC]">⚡</span>
+                    <span>Respuesta &lt; 2h</span>
+                  </div>
+                  <div className="p-2 rounded-lg bg-slate-50 border border-slate-200/80 text-[10px] font-bold text-slate-700 flex flex-col sm:flex-row items-center justify-center gap-1">
+                    <span className="text-emerald-600">🤝</span>
+                    <span>Asesor Dedicado</span>
+                  </div>
+                  <div className="p-2 rounded-lg bg-slate-50 border border-slate-200/80 text-[10px] font-bold text-slate-700 flex flex-col sm:flex-row items-center justify-center gap-1">
+                    <span className="text-indigo-600">🌐</span>
+                    <span>18 Departamentos</span>
+                  </div>
+                </div>
 
                 <p className="text-[11px] text-center text-slate-500 font-medium">
                   Tus datos están protegidos y solo se utilizarán para la cotización de este proyecto.

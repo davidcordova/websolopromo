@@ -37,12 +37,25 @@ export default function ClientsMarquee() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10 text-center relative z-10">
         <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-sky-800 bg-sky-50 border border-sky-200 px-3.5 py-1 rounded-full mb-3 shadow-xs">
           <ShieldCheck className="w-3.5 h-3.5 text-[#55A2DC]" />
-          <span>Estamos orgullosos de trabajar con</span>
+          <span>De la estrategia a la ejecución comercial</span>
         </div>
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold text-slate-900 tracking-tight">
-          Nuestros Clientes & Marcas Aliadas
+          Socios Estratégicos & Marcas Líderes
         </h2>
-        <p className="text-sm sm:text-base text-slate-600 max-w-2xl mx-auto mt-3 leading-relaxed">
+        
+        {/* Timeline Estratégico */}
+        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mt-4 mb-3">
+          {['PLANEAMOS', 'DISEÑAMOS', 'IMPLEMENTAMOS', 'MEDIMOS'].map((step, idx) => (
+            <React.Fragment key={step}>
+              <span className="text-[11px] font-extrabold font-mono tracking-widest text-slate-700 bg-white border border-slate-200 px-3 py-1 rounded-full shadow-2xs">
+                {step}
+              </span>
+              {idx < 3 && <span className="text-sky-500 font-bold text-xs">→</span>}
+            </React.Fragment>
+          ))}
+        </div>
+
+        <p className="text-sm sm:text-base text-slate-600 max-w-2xl mx-auto mt-2 leading-relaxed">
           Corporaciones globales líderes de tecnología, cómputo y consumo que confían la gestión de sus puntos de venta y activaciones en SoloPromo.
         </p>
       </div>

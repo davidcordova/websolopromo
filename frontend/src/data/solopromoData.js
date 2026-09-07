@@ -35,12 +35,119 @@ export const COMPANY_INFO = {
     whatsapp: "https://wa.me/51949705664?text=Hola%20SoloPromo%2C%20quisiera%20solicitar%20una%20cotizaci%C3%B3n%20para%20un%20proyecto"
   },
   metrics: [
-    { value: "+12", label: "Años de Experiencia", detail: "Socios estratégicos líderes" },
-    { value: "+150k", label: "Horas de Promotoría", detail: "En canal moderno y tradicional" },
-    { value: "100%", label: "Cobertura Nacional", detail: "4 macro-regiones del Perú" },
-    { value: "+25", label: "Marcas Globales", detail: "Confían en nuestro trabajo" }
+    { value: "+38.4%", label: "Incremento de Sell-Out", detail: "Aceleración comercial comprobada en retail" },
+    { value: "85+", label: "Puntos de Venta Activos", detail: "Falabella, Ripley, Hiraoka, Oechsle y canal electro" },
+    { value: "18", label: "Departamentos con Cobertura", detail: "Presencia continua en las 4 macro-regiones" },
+    { value: "+12", label: "Años de Liderazgo", detail: "Socios estratégicos de marcas globales" }
   ]
 };
+
+export const WHY_US_PILLARS = [
+  {
+    id: "cobertura",
+    title: "Cobertura Nacional",
+    desc: "Llegamos donde tu marca necesita estar. 18 departamentos y 85+ puntos de venta activos con supervisión descentralizada.",
+    stat: "18 Deptos",
+    icon: "Globe",
+    badge: "Presencia Total"
+  },
+  {
+    id: "ejecucion",
+    title: "Ejecución Integral 360°",
+    desc: "Desde la planificación estratégica hasta la implementación en tienda. Un solo socio responsable, un solo objetivo de venta.",
+    stat: "Solución 360°",
+    icon: "Target",
+    badge: "Sin Fricciones"
+  },
+  {
+    id: "resultados",
+    title: "Resultados Medibles",
+    desc: "No trabajamos por intuición. Cada proyecto incluye supervisión con telemetría móvil, control de quiebres y reportes en tiempo real.",
+    stat: "+38.4% Sell-Out",
+    icon: "TrendingUp",
+    badge: "Alto Retorno"
+  },
+  {
+    id: "experiencia",
+    title: "Experiencia Comprobada",
+    desc: "+12 años siendo socios estratégicos de los gigantes tecnológicos y corporativos líderes en el mercado peruano.",
+    stat: "+12 Años",
+    icon: "Award",
+    badge: "Garantía Líder"
+  }
+];
+
+export const WORKFLOW_STEPS = [
+  {
+    step: "01",
+    title: "Cuéntanos tu objetivo",
+    desc: "Entendemos tu necesidad, tu mercado objetivo y las metas de Sell-Out para tu campaña.",
+    icon: "MessageSquare",
+    highlight: "Diagnóstico inicial"
+  },
+  {
+    step: "02",
+    title: "Diseñamos la solución",
+    desc: "Creamos una propuesta a medida combinando creatividad, arquitectura de PDV y staffing homologado.",
+    icon: "Palette",
+    highlight: "Propuesta estratégica"
+  },
+  {
+    step: "03",
+    title: "Ejecutamos en tienda",
+    desc: "Coordinamos producción, despacho logístico nacional e instalación nocturna sin interrupciones.",
+    icon: "Rocket",
+    highlight: "Despliegue operativo"
+  },
+  {
+    step: "04",
+    title: "Supervisamos en tiempo real",
+    desc: "Controlamos asistencia geolocalizada por GPS, quiebres de góndola y ventas con telemetría continua.",
+    icon: "Activity",
+    highlight: "Telemetría GPS 24/7"
+  },
+  {
+    step: "05",
+    title: "Entregamos resultados",
+    desc: "Medimos el impacto comercial, generamos reportes de sell-out y optimizamos continuamente tu inversión.",
+    icon: "BarChart3",
+    highlight: "Maximizamos ROI"
+  }
+];
+
+export const TESTIMONIALS = [
+  {
+    id: "canon",
+    quote: "El equipo de SoloPromo ha sido un socio estratégico clave en nuestro lanzamiento nacional de cámaras mirrorless. Su capacidad de ejecución en Falabella e Hiraoka y el seguimiento con telemetría en tiempo real marcaron la diferencia en nuestro Sell-Out.",
+    author: "Carlos M. Benavides",
+    role: "Trade Marketing Manager",
+    company: "Canon Perú",
+    metric: "+38% Sell-Out en 3 meses",
+    logo: "/images/clients/logo_canon.webp",
+    verified: true
+  },
+  {
+    id: "tcl",
+    quote: "La implementación de cabeceras de góndola y corners MiniLED superó nuestras expectativas. Cuentan con un control riguroso de inventario y personal homologado que transmite a la perfección los diferenciales de la marca.",
+    author: "Valeria R. Mendoza",
+    role: "Product Manager Consumer Electronics",
+    company: "TCL Electronics",
+    metric: "+45% Visibilidad en Tienda",
+    logo: "/images/clients/logo_tcl.webp",
+    verified: true
+  },
+  {
+    id: "asus",
+    quote: "Diseñaron islas de experiencia gamer ROG con una estética y acabados impecables. El consumidor puede probar los equipos en vivo con total seguridad, logrando una tasa de permanencia y conversión extraordinaria.",
+    author: "Jorge L. Quintana",
+    role: "Retail Lead Gaming Systems",
+    company: "ASUS Perú",
+    metric: "+35% Tiempo de Permanencia",
+    logo: "/images/clients/logo_asus.webp",
+    verified: true
+  }
+];
+
 
 export const SERVICES = [
   {

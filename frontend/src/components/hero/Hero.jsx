@@ -196,17 +196,16 @@ export default function Hero({ onOpenQuoteModal }) {
 
           {/* Titular Monumental Panorámico */}
           <h1 className="text-4xl sm:text-5xl lg:text-[3.8rem] xl:text-[4.35rem] font-display font-black tracking-tight text-slate-950 leading-[1.07]">
-            El arte de transformar el{' '}
+            Transformamos tus puntos de venta en{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#55A2DC] via-[#2563EB] to-[#0284C7] relative inline-block">
-              punto de venta.
+              experiencias que venden.
               <span className="absolute -bottom-1 sm:-bottom-2 left-0 right-0 h-1.5 bg-gradient-to-r from-[#55A2DC] to-[#2563EB] rounded-full" />
             </span>
           </h1>
 
           {/* Narrativa de Autoridad y Cobertura Nacional */}
           <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed font-normal">
-            Conectamos marcas globales con el consumidor final en <strong className="font-semibold text-slate-900">Falabella, Ripley, Hiraoka y Oechsle</strong>. 
-            Promotoría homologada, exhibidores interactivos y supervisión con <strong className="font-semibold text-[#55A2DC]">telemetría en tiempo real</strong> para acelerar el Sell-Out en todo el Perú.
+            Diseñamos, implementamos y gestionamos soluciones de visibilidad, branding y ejecución comercial para marcas que buscan destacar en el punto de venta. Con <strong className="font-semibold text-slate-900">cobertura nacional</strong> y <strong className="font-semibold text-[#55A2DC]">resultados medibles</strong>.
           </p>
 
           {/* Botonera de Acción Principal */}
@@ -215,17 +214,17 @@ export default function Hero({ onOpenQuoteModal }) {
               onClick={onOpenQuoteModal}
               className="group relative flex items-center gap-3 px-7 py-3.5 sm:py-4 rounded-xl font-bold text-sm text-white bg-gradient-to-r from-[#55A2DC] via-[#3b82f6] to-[#2563EB] hover:from-[#4792cb] hover:to-[#1d4ed8] shadow-lg shadow-sky-500/25 transition-all duration-300 hover:scale-[1.03] active:scale-[0.98] cursor-pointer overflow-hidden"
             >
-              <span className="relative z-10">Cotizar Campaña / Iniciar Proyecto</span>
+              <span className="relative z-10">Solicitar Propuesta</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform duration-200 relative z-10" />
               <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
             </button>
 
             <a
-              href="#servicios"
+              href="#proyectos"
               className="flex items-center gap-2.5 px-6 py-3.5 sm:py-4 rounded-xl font-bold text-sm text-slate-700 bg-white hover:bg-slate-50 border border-slate-300/90 hover:border-slate-400 shadow-xs hover:shadow-md transition-all duration-300 hover:scale-[1.02]"
             >
               <Layers className="w-4 h-4 text-[#55A2DC]" />
-              <span>Ver los 8 Pilares</span>
+              <span>Ver Proyectos</span>
             </a>
 
             <a
