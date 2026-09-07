@@ -24,7 +24,6 @@ export default function ContactSection({ preSelectedService = '' }) {
   useEffect(() => {
     if (preSelectedService) {
       setFormData(prev => ({ ...prev, service: preSelectedService }));
-      setShowMoreFields(true);
     }
   }, [preSelectedService]);
 
@@ -227,51 +226,47 @@ export default function ContactSection({ preSelectedService = '' }) {
                   />
                 </div>
 
-                {/* 2 & 3. Teléfono / WhatsApp y Correo Electrónico */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-xs font-bold text-slate-700 mb-1.5">
-                      Teléfono o WhatsApp *
-                    </label>
-                    <input
-                      type="tel"
-                      name="phone"
-                      required
-                      value={formData.phone}
-                      onChange={handleChange}
-                      placeholder="+51 987 654 321"
-                      className="w-full px-4 py-3.5 rounded-xl bg-slate-50 border border-slate-300 focus:bg-white focus:border-[#55A2DC] focus:ring-2 focus:ring-[#55A2DC]/20 text-xs text-slate-900 placeholder-slate-400 outline-none transition-all font-medium"
-                    />
-                  </div>
+                {/* 2. Correo Electrónico */}
+                <div>
+                  <label className="block text-xs font-bold text-slate-700 mb-1.5">
+                    Correo Electrónico *
+                  </label>
+                  <input
+                    type="email"
+                    name="email"
+                    required
+                    value={formData.email}
+                    onChange={handleChange}
+                    placeholder="contacto@empresa.com"
+                    className="w-full px-4 py-3.5 rounded-xl bg-slate-50 border border-slate-300 focus:bg-white focus:border-[#55A2DC] focus:ring-2 focus:ring-[#55A2DC]/20 text-xs text-slate-900 placeholder-slate-400 outline-none transition-all font-medium"
+                  />
+                </div>
 
-                  <div>
-                    <label className="block text-xs font-bold text-slate-700 mb-1.5">
-                      Correo Electrónico *
-                    </label>
-                    <input
-                      type="email"
-                      name="email"
-                      required
-                      value={formData.email}
-                      onChange={handleChange}
-                      placeholder="contacto@empresa.com"
-                      className="w-full px-4 py-3.5 rounded-xl bg-slate-50 border border-slate-300 focus:bg-white focus:border-[#55A2DC] focus:ring-2 focus:ring-[#55A2DC]/20 text-xs text-slate-900 placeholder-slate-400 outline-none transition-all font-medium"
-                    />
-                  </div>
+                {/* 3. Teléfono o WhatsApp */}
+                <div>
+                  <label className="block text-xs font-bold text-slate-700 mb-1.5">
+                    Teléfono o WhatsApp *
+                  </label>
+                  <input
+                    type="tel"
+                    name="phone"
+                    required
+                    value={formData.phone}
+                    onChange={handleChange}
+                    placeholder="+51 987 654 321"
+                    className="w-full px-4 py-3.5 rounded-xl bg-slate-50 border border-slate-300 focus:bg-white focus:border-[#55A2DC] focus:ring-2 focus:ring-[#55A2DC]/20 text-xs text-slate-900 placeholder-slate-400 outline-none transition-all font-medium"
+                  />
                 </div>
 
                 {/* Toggle para Detalles Opcionales */}
-                <div className="flex items-center justify-between pt-1">
+                <div className="pt-2">
                   <button
                     type="button"
                     onClick={() => setShowMoreFields(!showMoreFields)}
-                    className="inline-flex items-center gap-1.5 text-xs font-bold text-[#55A2DC] hover:text-[#2563EB] transition-colors py-1 cursor-pointer"
+                    className="inline-flex items-center gap-1.5 text-xs font-bold text-[#55A2DC] hover:text-[#2563EB] transition-colors py-1.5 cursor-pointer"
                   >
                     <span>{showMoreFields ? '− Ocultar detalles adicionales' : '+ Agregar más detalles (Servicio, Empresa, Ciudad, Mensaje)'}</span>
                   </button>
-                  <span className="text-[10px] text-slate-400 font-medium hidden sm:inline">
-                    {showMoreFields ? 'Campos complementarios' : 'Respuesta en < 2h'}
-                  </span>
                 </div>
 
                 {/* Sección Expandible con Campos Complementarios */}
@@ -374,18 +369,18 @@ export default function ContactSection({ preSelectedService = '' }) {
                   )}
                 </button>
 
-                {/* Trust Badges */}
-                <div className="grid grid-cols-3 gap-2 pt-2 text-center">
-                  <div className="p-2 rounded-lg bg-slate-50 border border-slate-200/80 text-[10px] font-bold text-slate-700 flex flex-col sm:flex-row items-center justify-center gap-1">
-                    <span className="text-[#55A2DC]">⚡</span>
-                    <span>Respuesta &lt; 2h</span>
+                {/* Trust Badges de Alta Confianza */}
+                <div className="grid grid-cols-3 gap-2.5 pt-3 text-center">
+                  <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-200/90 text-xs font-bold text-slate-800 flex flex-col sm:flex-row items-center justify-center gap-1.5 shadow-2xs">
+                    <span className="text-[#55A2DC] text-base">⚡</span>
+                    <span>Respuesta en menos de 2h</span>
                   </div>
-                  <div className="p-2 rounded-lg bg-slate-50 border border-slate-200/80 text-[10px] font-bold text-slate-700 flex flex-col sm:flex-row items-center justify-center gap-1">
-                    <span className="text-emerald-600">🤝</span>
-                    <span>Asesor Dedicado</span>
+                  <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-200/90 text-xs font-bold text-slate-800 flex flex-col sm:flex-row items-center justify-center gap-1.5 shadow-2xs">
+                    <span className="text-emerald-600 text-base">🤝</span>
+                    <span>Asesor Senior Dedicado</span>
                   </div>
-                  <div className="p-2 rounded-lg bg-slate-50 border border-slate-200/80 text-[10px] font-bold text-slate-700 flex flex-col sm:flex-row items-center justify-center gap-1">
-                    <span className="text-indigo-600">🌐</span>
+                  <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-200/90 text-xs font-bold text-slate-800 flex flex-col sm:flex-row items-center justify-center gap-1.5 shadow-2xs">
+                    <span className="text-blue-600 text-base">🌐</span>
                     <span>18 Departamentos</span>
                   </div>
                 </div>

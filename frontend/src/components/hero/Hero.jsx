@@ -189,7 +189,7 @@ export default function Hero({ onOpenQuoteModal }) {
             <span className="text-xs sm:text-[13px] font-extrabold uppercase tracking-wider text-slate-900">
               Líderes en Trade Marketing · BTL & Retail de Vanguardia
             </span>
-            <span className="text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-sky-100 text-sky-800 font-mono">
+            <span className="text-[11px] font-sans font-black px-2.5 py-0.5 rounded-full bg-sky-100 text-sky-800 tracking-normal">
               12 Años de Trayectoria
             </span>
           </div>
@@ -208,17 +208,17 @@ export default function Hero({ onOpenQuoteModal }) {
             Diseñamos, implementamos y gestionamos soluciones de visibilidad, branding y ejecución comercial para marcas que buscan destacar en el punto de venta. Con <strong className="font-semibold text-slate-900">cobertura nacional</strong> y <strong className="font-semibold text-[#55A2DC]">resultados medibles</strong>.
           </p>
 
-          {/* Callout de Métrica Estrella +38.4% Sell-Out */}
-          <div className="inline-flex items-center gap-3.5 px-5 py-2.5 rounded-2xl bg-gradient-to-r from-sky-50 via-blue-50/80 to-indigo-50 border border-sky-300/80 shadow-sm text-left mx-auto">
-            <div className="flex items-center justify-center w-11 h-11 rounded-xl bg-gradient-to-br from-[#55A2DC] to-[#2563EB] text-white font-black text-xl shadow-md shrink-0">
+          {/* Callout de Métrica Estrella +438.4% Sell-Out */}
+          <div className="inline-flex items-center gap-4 px-6 py-3 rounded-2xl bg-gradient-to-r from-sky-50 via-blue-50/90 to-indigo-50 border-2 border-sky-400 shadow-md text-left mx-auto">
+            <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-[#55A2DC] to-[#2563EB] text-white font-black text-2xl shadow-md shrink-0">
               🏆
             </div>
             <div>
               <div className="flex items-baseline gap-2">
-                <span className="text-2xl sm:text-3xl font-black text-[#2563EB] font-display tracking-tight">+38.4%</span>
+                <span className="text-3xl sm:text-4xl font-black text-[#2563EB] font-display tracking-tight">+438.4%</span>
                 <span className="text-xs sm:text-sm font-black uppercase tracking-wide text-slate-900">Sell-Out Promedio Comprobado</span>
               </div>
-              <p className="text-[11px] text-slate-600 font-medium">Aceleración de rotación de producto en Falabella, Ripley, Hiraoka y Oechsle</p>
+              <p className="text-[11px] sm:text-xs text-slate-600 font-semibold">Aceleración de rotación de producto en Falabella, Ripley, Hiraoka y Oechsle</p>
             </div>
           </div>
 
@@ -535,7 +535,7 @@ export default function Hero({ onOpenQuoteModal }) {
               </div>
               <div>
                 <div className="text-base sm:text-lg font-black tracking-tight text-slate-950 font-display leading-tight">
-                  +38.4% Sell-Out
+                  +438.4% Sell-Out
                 </div>
                 <div className="text-[10px] uppercase tracking-wider text-slate-500 font-bold">
                   Aceleración Comercial
@@ -576,24 +576,26 @@ export default function Hero({ onOpenQuoteModal }) {
         {/* ========================================================= */}
         <div className="mt-14 pt-8 border-t border-slate-200/80">
           
-          {/* Marcas Globales que Confían en SoloPromo */}
-          <div className="mb-10 text-center">
-            <p className="text-xs sm:text-[13px] font-extrabold uppercase tracking-widest text-slate-600 mb-4">
+          {/* Marcas Globales que Confían en SoloPromo (Logotipos Ampliados) */}
+          <div className="mb-12 text-center">
+            <p className="text-xs sm:text-[13px] font-extrabold uppercase tracking-widest text-slate-600 mb-5">
               Socios estratégicos de los gigantes tecnológicos y corporativos líderes en el Perú
             </p>
-            <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
+            <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
               {HERO_CLIENT_LOGOS.map((client, cIdx) => (
                 <div 
                   key={cIdx} 
-                  className="flex items-center gap-3 px-4 py-2 sm:px-4.5 sm:py-2.5 rounded-2xl bg-white border border-slate-200/90 shadow-2xs hover:border-[#55A2DC] hover:shadow-md transition-all hover:scale-105 duration-200 group cursor-default"
+                  className="flex items-center gap-3.5 px-5 py-3 sm:px-6 sm:py-3.5 rounded-2xl bg-white border-2 border-slate-200/90 shadow-sm hover:border-[#55A2DC] hover:shadow-xl transition-all hover:scale-105 duration-200 group cursor-default"
                   title={client.name}
                 >
-                  <img 
-                    src={client.logo} 
-                    alt={`Logotipo oficial de ${client.name}`} 
-                    className="w-7 h-7 sm:w-8 sm:h-8 rounded-full object-contain p-0.5 bg-slate-50 border border-slate-100" 
-                  />
-                  <span className="text-xs sm:text-sm font-extrabold text-slate-800 group-hover:text-slate-950">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl p-1 bg-slate-50 border border-slate-100 flex items-center justify-center shrink-0">
+                    <img 
+                      src={client.logo} 
+                      alt={`Logotipo oficial de ${client.name}`} 
+                      className="w-full h-full object-contain" 
+                    />
+                  </div>
+                  <span className="text-sm sm:text-base font-black text-slate-900 group-hover:text-[#2563EB] transition-colors">
                     {client.name}
                   </span>
                 </div>
@@ -601,35 +603,35 @@ export default function Hero({ onOpenQuoteModal }) {
             </div>
           </div>
 
-          {/* 4 Métricas de Vanguardia con +38.4% como Estrella Principal */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 text-center">
+          {/* 4 Métricas de Vanguardia con +438.4% como Estrella Principal (50% más grande) */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 text-center items-end">
             {COMPANY_INFO.metrics.map((m, idx) => {
               const isHeroMetric = idx === 0;
               return (
                 <div 
                   key={idx} 
-                  className={`p-5 sm:p-6 rounded-2xl transition-all duration-300 group cursor-default relative overflow-hidden ${
+                  className={`p-6 sm:p-7 rounded-3xl transition-all duration-300 group cursor-default relative overflow-hidden ${
                     isHeroMetric
-                      ? 'bg-gradient-to-br from-sky-50 via-white to-blue-50 border-2 border-[#55A2DC] shadow-xl shadow-sky-500/15 ring-4 ring-sky-100/80 -translate-y-1'
+                      ? 'bg-gradient-to-br from-sky-50 via-white to-blue-50 border-3 border-[#2563EB] shadow-2xl shadow-blue-500/20 ring-4 ring-sky-200/80 -translate-y-2'
                       : 'bg-white border border-slate-200/90 shadow-xs hover:border-[#55A2DC]/60 hover:shadow-xl hover:-translate-y-1'
                   }`}
                 >
                   {isHeroMetric && (
-                    <div className="absolute top-2.5 right-2.5 px-2 py-0.5 rounded-full bg-gradient-to-r from-[#55A2DC] to-[#2563EB] text-white text-[9px] font-black uppercase tracking-wider shadow-xs">
-                      ★ Métrica Estrella
+                    <div className="absolute top-3 right-3 px-3 py-1 rounded-full bg-gradient-to-r from-[#2563EB] to-[#55A2DC] text-white text-[10px] font-black uppercase tracking-wider shadow-md">
+                      ★ Métrica Estrella #1
                     </div>
                   )}
                   <div className={`font-display font-black tracking-tight group-hover:scale-105 transition-transform duration-200 ${
                     isHeroMetric 
-                      ? 'text-4xl sm:text-5xl lg:text-[3.2rem] text-transparent bg-clip-text bg-gradient-to-r from-[#0284C7] via-[#2563EB] to-[#1D4ED8] leading-tight my-1' 
-                      : 'text-3xl sm:text-4xl text-[#55A2DC]'
+                      ? 'text-5xl sm:text-6xl lg:text-[4.2rem] xl:text-[4.5rem] text-transparent bg-clip-text bg-gradient-to-r from-[#0284C7] via-[#2563EB] to-[#1D4ED8] leading-tight my-2 drop-shadow-sm' 
+                      : 'text-3xl sm:text-4xl text-slate-800'
                   }`}>
                     {m.value}
                   </div>
-                  <div className={`text-xs sm:text-sm font-bold mt-1.5 ${isHeroMetric ? 'text-slate-950 font-black' : 'text-slate-800'}`}>
+                  <div className={`text-xs sm:text-sm font-bold mt-1.5 ${isHeroMetric ? 'text-slate-950 font-black text-sm sm:text-base' : 'text-slate-700'}`}>
                     {m.label}
                   </div>
-                  <div className="text-[11px] text-slate-500 mt-0.5 leading-snug">{m.detail}</div>
+                  <div className={`text-[11px] mt-0.5 leading-snug ${isHeroMetric ? 'text-slate-600 font-semibold' : 'text-slate-500'}`}>{m.detail}</div>
                 </div>
               );
             })}

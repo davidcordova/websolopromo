@@ -132,11 +132,11 @@ export default function App() {
         {/* 1. Hero Principal con Estadísticas y CTA */}
         <Hero onOpenQuoteModal={handleOpenQuote} />
 
-        {/* 2. ¿Quiénes Somos? Nosotros & 12 Años de Experiencia */}
-        <AboutUs />
-
-        {/* 3. ¿Por qué las marcas líderes trabajan con nosotros? (Diferenciación) */}
+        {/* 2. ¿Por qué las marcas líderes trabajan con nosotros? (Diferenciación) */}
         <WhyUsSection onOpenQuoteModal={handleOpenQuote} />
+
+        {/* 3. ¿Quiénes Somos? Nosotros & 12 Años de Experiencia */}
+        <AboutUs />
 
         {/* 4. Socios Estratégicos & Marcas Líderes (Marquee + Despliegue Retail) */}
         <ClientsMarquee />

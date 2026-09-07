@@ -35,7 +35,7 @@ export const COMPANY_INFO = {
     whatsapp: "https://wa.me/51949705664?text=Hola%20SoloPromo%2C%20quisiera%20solicitar%20una%20cotizaci%C3%B3n%20para%20un%20proyecto"
   },
   metrics: [
-    { value: "+38.4%", label: "Incremento de Sell-Out", detail: "Aceleración comercial comprobada en retail" },
+    { value: "+438.4%", label: "Incremento de Sell-Out", detail: "Aceleración comercial comprobada en retail" },
     { value: "85+", label: "Puntos de Venta Activos", detail: "Falabella, Ripley, Hiraoka, Oechsle y canal electro" },
     { value: "18", label: "Departamentos con Cobertura", detail: "Presencia continua en las 4 macro-regiones" },
     { value: "+12", label: "Años de Liderazgo", detail: "Socios estratégicos de marcas globales" }
@@ -63,7 +63,7 @@ export const WHY_US_PILLARS = [
     id: "resultados",
     title: "Resultados Medibles",
     desc: "No trabajamos por intuición. Cada proyecto incluye supervisión con telemetría móvil, control de quiebres y reportes en tiempo real.",
-    stat: "+38.4% Sell-Out",
+    stat: "+438.4% Sell-Out",
     icon: "TrendingUp",
     badge: "Alto Retorno"
   },

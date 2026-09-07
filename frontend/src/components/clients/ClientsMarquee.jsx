@@ -71,10 +71,10 @@ export default function ClientsMarquee() {
               key={idx}
               onClick={() => setSelectedClientId(client.id)}
               title={`Ver caso operativo de ${client.name}`}
-              className="w-40 h-40 sm:w-48 sm:h-48 md:w-52 md:h-52 rounded-3xl bg-white hover:bg-slate-50 border-2 border-slate-200/90 hover:border-[#55A2DC] transition-all duration-300 shadow-sm hover:shadow-2xl hover:-translate-y-2 flex items-center justify-center p-4 shrink-0 group cursor-pointer shine-hover"
+              className="w-52 h-44 sm:w-64 sm:h-52 md:w-72 md:h-56 rounded-3xl bg-white hover:bg-slate-50 border-2 border-slate-200/90 hover:border-[#55A2DC] transition-all duration-300 shadow-md hover:shadow-2xl hover:-translate-y-2 flex items-center justify-center p-5 shrink-0 group cursor-pointer shine-hover"
             >
-              {/* LOGOTIPO COMPLETO, ENTERO Y AMPLIADO */}
-              <div className="relative w-32 h-32 sm:w-40 sm:h-40 rounded-2xl overflow-hidden p-2 drop-shadow-md group-hover:scale-110 transition-transform duration-300 flex items-center justify-center bg-slate-50/50">
+              {/* LOGOTIPO COMPLETO, ENTERO Y AMPLIADO AL DOBLE */}
+              <div className="relative w-44 h-32 sm:w-56 sm:h-40 rounded-2xl overflow-hidden p-3 drop-shadow-md group-hover:scale-115 transition-transform duration-300 flex items-center justify-center bg-slate-50/60">
                 <img
                   src={client.logo}
                   alt={`Logotipo oficial de ${client.name}`}
@@ -197,8 +197,8 @@ export default function ClientsMarquee() {
             <div className="lg:col-span-7 flex flex-col justify-center">
               
               {/* Encabezado de la Ficha con Logo y Nombres */}
-              <div className="flex items-center gap-4 sm:gap-5 mb-5">
-                <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl bg-white p-2.5 shrink-0 drop-shadow-lg ring-2 ring-[#55A2DC]/60 flex items-center justify-center border border-slate-200">
+              <div className="flex items-center gap-4 sm:gap-6 mb-5">
+                <div className="w-28 h-28 sm:w-36 sm:h-36 rounded-2xl bg-white p-3 shrink-0 drop-shadow-xl ring-2 ring-[#55A2DC]/60 flex items-center justify-center border border-slate-200">
                   <img
                     src={selectedClient.logo}
                     alt={`Logo oficial de ${selectedClient.name}`}
@@ -206,7 +206,7 @@ export default function ClientsMarquee() {
                   />
                 </div>
                 <div>
-                  <div className="inline-flex items-center gap-1.5 text-[10px] font-extrabold uppercase tracking-wider text-sky-800 bg-sky-50 border border-sky-200 px-2.5 py-0.5 rounded-full mb-1">
+                  <div className="inline-flex items-center gap-1.5 text-[10px] sm:text-xs font-extrabold uppercase tracking-wider text-sky-800 bg-sky-50 border border-sky-200 px-3 py-1 rounded-full mb-1.5">
                     <Award className="w-3 h-3 text-[#55A2DC]" />
                     <span>{selectedClient.badge} · Alianza Estratégica</span>
                   </div>

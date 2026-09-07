@@ -41,8 +41,8 @@ export default function ServicesSection({ onSelectServiceToQuote }) {
           </p>
         </div>
 
-        {/* Grid de los 8 servicios en tarjetas claras de alto impacto (4x2) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* Grid de los 8 servicios en 2 columnas en móvil y 4 en desktop (2x4 / 4x2) */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-6">
           {SERVICES.map((service, sIndex) => {
             const IconComponent = iconMap[service.icon] || ShoppingBag;
             const isStar = sIndex < 3; // Primeros 3 pilares insignia
@@ -50,22 +50,23 @@ export default function ServicesSection({ onSelectServiceToQuote }) {
             return (
               <div
                 key={service.id}
-                className="light-card rounded-3xl flex flex-col justify-between overflow-hidden group shine-hover hover:-translate-y-2 hover:shadow-xl hover:shadow-sky-100 transition-all duration-300 relative border border-slate-200/90"
+                className="light-card rounded-2xl sm:rounded-3xl flex flex-col justify-between overflow-hidden group shine-hover hover:-translate-y-2 hover:shadow-xl hover:shadow-sky-100 transition-all duration-300 relative border border-slate-200/90"
               >
                 <div>
                   {/* Imagen Real de la Campaña en Ultra-HD */}
-                  <div className="relative h-44 w-full overflow-hidden bg-slate-100">
+                  <div className="relative h-28 sm:h-44 w-full overflow-hidden bg-slate-100">
                     <img
                       src={service.image}
-                      alt={service.title}
+                      alt={`Servicio de ${service.title} - SoloPromo`}
                       className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110"
+                      loading="lazy"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent pointer-events-none"></div>
 
                     {/* Badge superior e icono flotante */}
-                    <div className="absolute top-3 left-3 right-3 flex items-center justify-between">
+                    <div className="absolute top-2 sm:top-3 left-2 sm:left-3 right-2 sm:right-3 flex items-center justify-between">
                       <span 
-                        className="text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded-md backdrop-blur-md shadow-xs flex items-center gap-1"
+                        className="text-[9px] sm:text-[10px] font-extrabold uppercase tracking-wider px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-md backdrop-blur-md shadow-xs flex items-center gap-1"
                         style={{ 
                           backgroundColor: 'rgba(255, 255, 255, 0.95)', 
                           color: service.color,
@@ -73,37 +74,37 @@ export default function ServicesSection({ onSelectServiceToQuote }) {
                         }}
                       >
                         {isStar && <span className="text-amber-500">★</span>}
-                        {service.badge}
+                        <span className="truncate max-w-[80px] sm:max-w-none">{service.badge}</span>
                       </span>
 
                       <div 
-                        className="w-8 h-8 rounded-xl flex items-center justify-center backdrop-blur-md shadow-xs"
+                        className="w-6 h-6 sm:w-8 sm:h-8 rounded-lg sm:rounded-xl flex items-center justify-center backdrop-blur-md shadow-xs"
                         style={{ 
                           backgroundColor: 'rgba(255, 255, 255, 0.95)', 
                           color: service.color,
                           border: '1px solid rgba(226, 232, 240, 0.9)'
                         }}
                       >
-                        <IconComponent className="w-4 h-4" />
+                        <IconComponent className="w-3 h-3 sm:w-4 sm:h-4" />
                       </div>
                     </div>
                   </div>
 
                   {/* Contenido textual del servicio */}
-                  <div className="p-6">
-                    <h3 className="text-lg font-display font-extrabold text-slate-900 group-hover:text-[#55A2DC] transition-colors">
+                  <div className="p-3 sm:p-6">
+                    <h3 className="text-xs sm:text-lg font-display font-extrabold text-slate-900 group-hover:text-[#55A2DC] transition-colors leading-tight">
                       {service.title}
                     </h3>
-                    <p className="text-[11px] text-slate-500 font-semibold mt-0.5 mb-2.5">
+                    <p className="text-[10px] sm:text-[11px] text-slate-500 font-semibold mt-0.5 mb-1.5 sm:mb-2.5 line-clamp-1">
                       {service.subtitle}
                     </p>
 
-                    <p className="text-xs text-slate-600 leading-relaxed line-clamp-3">
+                    <p className="text-[11px] sm:text-xs text-slate-600 leading-snug line-clamp-2 sm:line-clamp-3">
                       {service.shortDesc}
                     </p>
 
                     {/* Puntos destacados */}
-                    <div className="mt-4 pt-4 border-t border-slate-100 space-y-1.5">
+                    <div className="hidden sm:block mt-4 pt-4 border-t border-slate-100 space-y-1.5">
                       {service.highlights.slice(0, 2).map((h, i) => (
                         <div key={i} className="flex items-center gap-2 text-[11px] text-slate-700 font-medium">
                           <Check className="w-3.5 h-3.5 text-[#55A2DC] shrink-0" />
@@ -114,18 +115,18 @@ export default function ServicesSection({ onSelectServiceToQuote }) {
                   </div>
                 </div>
 
-                {/* Acciones inferiores */}
-                <div className="px-6 pb-6 pt-2 flex items-center justify-between gap-2 border-t border-slate-100 mt-2 bg-slate-50/50">
+                {/* Acciones inferiores con tamaño táctil de 44px */}
+                <div className="px-3 sm:px-6 pb-3 sm:pb-6 pt-2 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2 border-t border-slate-100 mt-2 bg-slate-50/50">
                   <button
                     onClick={() => setSelectedService(service)}
-                    className="text-xs font-bold text-[#55A2DC] hover:text-[#3888c3] flex items-center gap-1 transition-colors cursor-pointer"
+                    className="text-[11px] sm:text-xs font-bold text-[#55A2DC] hover:text-[#3888c3] flex items-center justify-center gap-1 transition-colors cursor-pointer min-h-[38px] sm:min-h-[44px]"
                   >
                     <span>Ver proyectos →</span>
                   </button>
 
                   <button
                     onClick={() => onSelectServiceToQuote(service.title)}
-                    className="text-[11px] font-bold text-slate-700 hover:text-white hover:bg-[#55A2DC] bg-white border border-slate-300 px-3.5 py-1.5 rounded-xl transition-all shadow-2xs cursor-pointer"
+                    className="text-[10px] sm:text-[11px] font-bold text-slate-700 hover:text-white hover:bg-[#55A2DC] bg-white border border-slate-300 px-3 sm:px-3.5 py-1.5 rounded-xl transition-all shadow-2xs cursor-pointer min-h-[36px] sm:min-h-[40px] flex items-center justify-center"
                   >
                     Cotizar
                   </button>
