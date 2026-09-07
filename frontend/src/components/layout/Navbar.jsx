@@ -48,7 +48,7 @@ export default function Navbar({ onOpenQuoteModal }) {
 
   const navLinks = [
     { name: 'Inicio', href: '#inicio' },
-    { name: '¿Por qué Nosotros?', href: '#por-que-nosotros' },
+    { name: 'Nosotros', href: '#nosotros' },
     { name: 'Servicios', href: '#servicios' },
     { name: 'Clientes', href: '#clientes' },
     { name: 'Proyectos', href: '#proyectos' },

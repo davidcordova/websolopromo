@@ -21,7 +21,7 @@ export default function ServicesSection({ onSelectServiceToQuote }) {
   const [selectedService, setSelectedService] = useState(null);
 
   return (
-    <section id="servicios" className="py-24 relative bg-white border-t border-slate-200/80">
+    <section id="servicios" className="py-20 sm:py-24 relative bg-white border-t border-slate-200/80">
       
       {/* Glow ambiental suave */}
       <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-[#55A2DC]/8 rounded-full blur-[140px] pointer-events-none"></div>

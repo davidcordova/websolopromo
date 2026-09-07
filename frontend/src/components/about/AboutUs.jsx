@@ -8,7 +8,7 @@ export default function AboutUs() {
   const parallaxOffset = useParallax(0.08);
 
   return (
-    <section id="nosotros" className="py-24 relative bg-white border-t border-slate-200/80 overflow-hidden">
+    <section id="nosotros" className="py-20 sm:py-24 relative bg-white border-t border-slate-200/80 overflow-hidden">
       
       {/* Glows y elementos decorativos parallax en el fondo */}
       <div 

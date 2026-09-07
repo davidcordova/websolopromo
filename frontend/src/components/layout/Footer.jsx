@@ -123,13 +123,15 @@ export default function Footer() {
         {/* Barra inferior de copyright */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
           <div>
-            &copy; {currentYear} SOPORTE PROMOCIONAL S.A.C. ({COMPANY_INFO.website.replace('https://', '')}). Todos los derechos reservados.
+            &copy; {currentYear} SOPORTE PROMOCIONAL S.A.C. ({COMPANY_INFO.website.replace('https://', '')}). Acuerdos de confidencialidad y cumplimiento normativo garantizados.
           </div>
 
-          <div className="flex flex-wrap items-center gap-5">
+          <div className="flex flex-wrap items-center gap-4 sm:gap-5">
             <a href="#inicio" className="hover:text-cyan-400 transition-colors">Inicio</a>
+            <a href="#nosotros" className="hover:text-cyan-400 transition-colors">Nosotros</a>
             <a href="#servicios" className="hover:text-cyan-400 transition-colors">Servicios</a>
-            <a href="#cobertura" className="hover:text-cyan-400 transition-colors">Cobertura Nacional</a>
+            <a href="#proyectos" className="hover:text-cyan-400 transition-colors">Proyectos</a>
+            <a href="#cobertura" className="hover:text-cyan-400 transition-colors">Cobertura</a>
             <a href="#contacto" className="hover:text-cyan-400 transition-colors">Contacto</a>
             <span className="text-slate-700 hidden sm:inline">&bull;</span>
             <a 

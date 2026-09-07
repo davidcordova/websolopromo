@@ -18,11 +18,13 @@ export default function ContactSection({ preSelectedService = '' }) {
   });
 
   const [loading, setLoading] = useState(false);
+  const [showMoreFields, setShowMoreFields] = useState(false);
   const [status, setStatus] = useState({ type: '', message: '' });
 
   useEffect(() => {
     if (preSelectedService) {
       setFormData(prev => ({ ...prev, service: preSelectedService }));
+      setShowMoreFields(true);
     }
   }, [preSelectedService]);
 
@@ -39,22 +41,28 @@ export default function ContactSection({ preSelectedService = '' }) {
     setLoading(true);
     setStatus({ type: '', message: '' });
 
+    const payload = {
+      ...formData,
+      message: formData.message.trim() || `Solicitud de cotización y propuesta para el servicio de: ${formData.service || 'Trade Marketing'}`
+    };
+
     try {
-      const res = await apiService.submitContact(formData);
+      const res = await apiService.submitContact(payload);
       setStatus({
         type: 'success',
-        message: res.message || '¡Tu solicitud ha sido enviada con éxito! Un asesor se comunicará contigo de inmediato.'
+        message: res.message || '¡Tu requerimiento ha sido registrado con éxito! Un director de cuenta se comunicará contigo en menos de 2 horas hábiles.'
       });
-      // Limpiar formulario excepto ciudad
+      // Limpiar formulario
       setFormData({
         name: '',
         company: '',
         email: '',
         phone: '',
-        service: 'trade-marketing',
+        service: 'Trade Marketing',
         city: 'Lima y Callao',
         message: ''
       });
+      setShowMoreFields(false);
     } catch (err) {
       setStatus({
         type: 'error',
@@ -66,7 +74,7 @@ export default function ContactSection({ preSelectedService = '' }) {
   };
 
   return (
-    <section id="contacto" className="py-24 relative bg-white border-t border-slate-200/80">
+    <section id="contacto" className="py-20 sm:py-24 relative bg-white border-t border-slate-200/80">
       
       {/* Luces de fondo suaves */}
       <div className="absolute top-1/4 right-10 w-96 h-96 bg-[#55A2DC]/8 rounded-full blur-[140px] pointer-events-none"></div>
@@ -203,57 +211,24 @@ export default function ContactSection({ preSelectedService = '' }) {
 
               <form onSubmit={handleSubmit} className="space-y-4">
                 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {/* Nombre */}
-                  <div>
-                    <label className="block text-xs font-bold text-slate-700 mb-1.5">
-                      Nombre y Apellidos *
-                    </label>
-                    <input
-                      type="text"
-                      name="name"
-                      required
-                      value={formData.name}
-                      onChange={handleChange}
-                      placeholder="Ej. Carlos Mendoza"
-                      className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-300 focus:bg-white focus:border-[#55A2DC] focus:ring-2 focus:ring-[#55A2DC]/20 text-xs text-slate-900 placeholder-slate-400 outline-none transition-all font-medium"
-                    />
-                  </div>
-
-                  {/* Empresa */}
-                  <div>
-                    <label className="block text-xs font-bold text-slate-700 mb-1.5">
-                      Empresa o Marca
-                    </label>
-                    <input
-                      type="text"
-                      name="company"
-                      value={formData.company}
-                      onChange={handleChange}
-                      placeholder="Ej. Corporación Tecnológica"
-                      className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-300 focus:bg-white focus:border-[#55A2DC] focus:ring-2 focus:ring-[#55A2DC]/20 text-xs text-slate-900 placeholder-slate-400 outline-none transition-all font-medium"
-                    />
-                  </div>
+                {/* 1. Nombre y Apellidos */}
+                <div>
+                  <label className="block text-xs font-bold text-slate-700 mb-1.5">
+                    Nombre y Apellidos *
+                  </label>
+                  <input
+                    type="text"
+                    name="name"
+                    required
+                    value={formData.name}
+                    onChange={handleChange}
+                    placeholder="Ej. Carlos Mendoza"
+                    className="w-full px-4 py-3.5 rounded-xl bg-slate-50 border border-slate-300 focus:bg-white focus:border-[#55A2DC] focus:ring-2 focus:ring-[#55A2DC]/20 text-xs text-slate-900 placeholder-slate-400 outline-none transition-all font-medium"
+                  />
                 </div>
 
+                {/* 2 & 3. Teléfono / WhatsApp y Correo Electrónico */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {/* Email */}
-                  <div>
-                    <label className="block text-xs font-bold text-slate-700 mb-1.5">
-                      Correo Electrónico *
-                    </label>
-                    <input
-                      type="email"
-                      name="email"
-                      required
-                      value={formData.email}
-                      onChange={handleChange}
-                      placeholder="contacto@empresa.com"
-                      className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-300 focus:bg-white focus:border-[#55A2DC] focus:ring-2 focus:ring-[#55A2DC]/20 text-xs text-slate-900 placeholder-slate-400 outline-none transition-all font-medium"
-                    />
-                  </div>
-
-                  {/* Teléfono */}
                   <div>
                     <label className="block text-xs font-bold text-slate-700 mb-1.5">
                       Teléfono o WhatsApp *
@@ -265,72 +240,120 @@ export default function ContactSection({ preSelectedService = '' }) {
                       value={formData.phone}
                       onChange={handleChange}
                       placeholder="+51 987 654 321"
-                      className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-300 focus:bg-white focus:border-[#55A2DC] focus:ring-2 focus:ring-[#55A2DC]/20 text-xs text-slate-900 placeholder-slate-400 outline-none transition-all font-medium"
+                      className="w-full px-4 py-3.5 rounded-xl bg-slate-50 border border-slate-300 focus:bg-white focus:border-[#55A2DC] focus:ring-2 focus:ring-[#55A2DC]/20 text-xs text-slate-900 placeholder-slate-400 outline-none transition-all font-medium"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-bold text-slate-700 mb-1.5">
+                      Correo Electrónico *
+                    </label>
+                    <input
+                      type="email"
+                      name="email"
+                      required
+                      value={formData.email}
+                      onChange={handleChange}
+                      placeholder="contacto@empresa.com"
+                      className="w-full px-4 py-3.5 rounded-xl bg-slate-50 border border-slate-300 focus:bg-white focus:border-[#55A2DC] focus:ring-2 focus:ring-[#55A2DC]/20 text-xs text-slate-900 placeholder-slate-400 outline-none transition-all font-medium"
                     />
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {/* Servicio */}
-                  <div>
-                    <label className="block text-xs font-bold text-slate-700 mb-1.5">
-                      Servicio de Interés
-                    </label>
-                    <select
-                      name="service"
-                      value={formData.service}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-300 focus:bg-white focus:border-[#55A2DC] text-xs text-slate-900 outline-none transition-all font-medium"
-                    >
-                      {SERVICES.map((s) => (
-                        <option key={s.id} value={s.title}>
-                          {s.title}
-                        </option>
-                      ))}
-                      <option value="Propuesta Integral Multicanal">Propuesta Integral Multicanal</option>
-                      <option value="Otra Consulta">Otra Consulta</option>
-                    </select>
-                  </div>
-
-                  {/* Ciudad */}
-                  <div>
-                    <label className="block text-xs font-bold text-slate-700 mb-1.5">
-                      Zona o Ciudad de Despliegue
-                    </label>
-                    <select
-                      name="city"
-                      value={formData.city}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-300 focus:bg-white focus:border-[#55A2DC] text-xs text-slate-900 outline-none transition-all font-medium"
-                    >
-                      <option value="Lima y Callao">Lima y Callao</option>
-                      <option value="Arequipa">Arequipa (Sur)</option>
-                      <option value="Trujillo">Trujillo (Norte)</option>
-                      <option value="Chiclayo">Chiclayo (Norte)</option>
-                      <option value="Piura">Piura (Norte)</option>
-                      <option value="Cusco">Cusco (Sur)</option>
-                      <option value="Huancayo">Huancayo (Centro)</option>
-                      <option value="Iquitos">Iquitos (Occidente)</option>
-                      <option value="A Nivel Nacional (Perú)">A Nivel Nacional (Todo el Perú)</option>
-                    </select>
-                  </div>
+                {/* Toggle para Detalles Opcionales */}
+                <div className="flex items-center justify-between pt-1">
+                  <button
+                    type="button"
+                    onClick={() => setShowMoreFields(!showMoreFields)}
+                    className="inline-flex items-center gap-1.5 text-xs font-bold text-[#55A2DC] hover:text-[#2563EB] transition-colors py-1 cursor-pointer"
+                  >
+                    <span>{showMoreFields ? '− Ocultar detalles adicionales' : '+ Agregar más detalles (Servicio, Empresa, Ciudad, Mensaje)'}</span>
+                  </button>
+                  <span className="text-[10px] text-slate-400 font-medium hidden sm:inline">
+                    {showMoreFields ? 'Campos complementarios' : 'Respuesta en < 2h'}
+                  </span>
                 </div>
 
-                {/* Mensaje */}
-                <div>
-                  <label className="block text-xs font-bold text-slate-700 mb-1.5">
-                    Detalle del Proyecto o Requerimiento *
-                  </label>
-                  <textarea
-                    name="message"
-                    required
-                    rows={4}
-                    value={formData.message}
-                    onChange={handleChange}
-                    placeholder="Cuéntanos brevemente sobre la campaña, duración estimada, número de promotores o requerimiento de módulos..."
-                    className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-300 focus:bg-white focus:border-[#55A2DC] focus:ring-2 focus:ring-[#55A2DC]/20 text-xs text-slate-900 placeholder-slate-400 outline-none transition-all resize-none font-medium"
-                  ></textarea>
-                </div>
+                {/* Sección Expandible con Campos Complementarios */}
+                {showMoreFields && (
+                  <div className="space-y-4 pt-1 animate-fade-in border-t border-slate-100 mt-2">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      {/* Servicio */}
+                      <div>
+                        <label className="block text-xs font-bold text-slate-700 mb-1.5">
+                          Servicio de Interés
+                        </label>
+                        <select
+                          name="service"
+                          value={formData.service}
+                          onChange={handleChange}
+                          className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-300 focus:bg-white focus:border-[#55A2DC] text-xs text-slate-900 outline-none transition-all font-medium"
+                        >
+                          {SERVICES.map((s) => (
+                            <option key={s.id} value={s.title}>
+                              {s.title}
+                            </option>
+                          ))}
+                          <option value="Propuesta Integral Multicanal">Propuesta Integral Multicanal</option>
+                          <option value="Otra Consulta">Otra Consulta</option>
+                        </select>
+                      </div>
+
+                      {/* Empresa */}
+                      <div>
+                        <label className="block text-xs font-bold text-slate-700 mb-1.5">
+                          Empresa o Marca
+                        </label>
+                        <input
+                          type="text"
+                          name="company"
+                          value={formData.company}
+                          onChange={handleChange}
+                          placeholder="Ej. Corporación Tecnológica"
+                          className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-300 focus:bg-white focus:border-[#55A2DC] focus:ring-2 focus:ring-[#55A2DC]/20 text-xs text-slate-900 placeholder-slate-400 outline-none transition-all font-medium"
+                        />
+                      </div>
+                    </div>
+
+                    {/* Ciudad */}
+                    <div>
+                      <label className="block text-xs font-bold text-slate-700 mb-1.5">
+                        Zona o Ciudad de Despliegue
+                      </label>
+                      <select
+                        name="city"
+                        value={formData.city}
+                        onChange={handleChange}
+                        className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-300 focus:bg-white focus:border-[#55A2DC] text-xs text-slate-900 outline-none transition-all font-medium"
+                      >
+                        <option value="Lima y Callao">Lima y Callao</option>
+                        <option value="Arequipa">Arequipa (Sur)</option>
+                        <option value="Trujillo">Trujillo (Norte)</option>
+                        <option value="Chiclayo">Chiclayo (Norte)</option>
+                        <option value="Piura">Piura (Norte)</option>
+                        <option value="Cusco">Cusco (Sur)</option>
+                        <option value="Huancayo">Huancayo (Centro)</option>
+                        <option value="Iquitos">Iquitos (Occidente)</option>
+                        <option value="A Nivel Nacional (Perú)">A Nivel Nacional (Todo el Perú)</option>
+                      </select>
+                    </div>
+
+                    {/* Mensaje */}
+                    <div>
+                      <label className="block text-xs font-bold text-slate-700 mb-1.5">
+                        Detalle del Proyecto o Requerimiento
+                      </label>
+                      <textarea
+                        name="message"
+                        rows={3}
+                        value={formData.message}
+                        onChange={handleChange}
+                        placeholder="Cuéntanos brevemente sobre la campaña, duración estimada, número de promotores o requerimiento de módulos..."
+                        className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-300 focus:bg-white focus:border-[#55A2DC] focus:ring-2 focus:ring-[#55A2DC]/20 text-xs text-slate-900 placeholder-slate-400 outline-none transition-all resize-none font-medium"
+                      ></textarea>
+                    </div>
+                  </div>
+                )}
 
                 {/* Botón de Envío */}
                 <button

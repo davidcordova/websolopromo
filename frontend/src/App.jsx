@@ -132,32 +132,32 @@ export default function App() {
         {/* 1. Hero Principal con Estadísticas y CTA */}
         <Hero onOpenQuoteModal={handleOpenQuote} />
 
-        {/* 2. ¿Por qué las marcas líderes trabajan con nosotros? (Diferenciación) */}
+        {/* 2. ¿Quiénes Somos? Nosotros & 12 Años de Experiencia */}
+        <AboutUs />
+
+        {/* 3. ¿Por qué las marcas líderes trabajan con nosotros? (Diferenciación) */}
         <WhyUsSection onOpenQuoteModal={handleOpenQuote} />
 
-        {/* 3. Socios Estratégicos & Marcas Líderes (Marquee + Despliegue Retail) */}
+        {/* 4. Socios Estratégicos & Marcas Líderes (Marquee + Despliegue Retail) */}
         <ClientsMarquee />
 
-        {/* 4. Nuestros 8 Pilares de Servicio */}
+        {/* 5. Nuestros 8 Pilares de Servicio */}
         <ServicesSection onSelectServiceToQuote={handleSelectServiceToQuote} />
 
-        {/* 5. Cómo Trabajamos (Metodología en 5 pasos) */}
+        {/* 6. Cómo Trabajamos (Metodología en 5 pasos) */}
         <WorkflowSection onOpenQuoteModal={handleOpenQuote} />
 
-        {/* 6. Portafolio y Casos de Éxito en Retail */}
+        {/* 7. Portafolio y Casos de Éxito en Retail */}
         <PortfolioSection />
 
-        {/* 7. Prueba Social & Testimonios con Métricas */}
+        {/* 8. Prueba Social & Testimonios con Métricas */}
         <TestimonialsSection />
 
-        {/* 8. Cobertura a Nivel Nacional (Llegamos donde tu marca necesita estar) */}
+        {/* 9. Cobertura a Nivel Nacional (Llegamos donde tu marca necesita estar) */}
         <CoverageMap />
 
-        {/* 9. Infraestructura y Capacidad Operativa */}
+        {/* 10. Infraestructura y Capacidad Operativa */}
         <InfrastructureSection />
-
-        {/* 10. ¿Quiénes Somos? Nosotros & 12 Años de Experiencia */}
-        <AboutUs />
 
         {/* 11. ¿Tienes un proyecto en mente? Formulario Conectado a MySQL */}
         <ContactSection preSelectedService={preSelectedService} />

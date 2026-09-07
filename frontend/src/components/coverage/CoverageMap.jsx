@@ -47,7 +47,7 @@ export default function CoverageMap() {
   });
 
   return (
-    <section id="cobertura" className="py-24 relative bg-slate-50/80 border-t border-slate-200/80 overflow-hidden">
+    <section id="cobertura" className="py-20 sm:py-24 relative bg-slate-50/80 border-t border-slate-200/80 overflow-hidden">
       
       {/* Luces de ambientación suave */}
       <div className="absolute top-1/3 left-10 w-96 h-96 bg-[#55A2DC]/10 rounded-full blur-[140px] pointer-events-none" />

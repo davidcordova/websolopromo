@@ -181,16 +181,16 @@ export default function Hero({ onOpenQuoteModal }) {
         <div className="text-center max-w-4xl mx-auto space-y-5 sm:space-y-6">
           
           {/* Badge de Vanguardia con micro-pulso */}
-          <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/95 border border-sky-200/90 shadow-xs backdrop-blur-md">
+          <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white border border-sky-200/90 shadow-xs backdrop-blur-md">
             <span className="relative flex h-2.5 w-2.5">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#55A2DC] opacity-75" />
               <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#55A2DC]" />
             </span>
-            <span className="text-[11px] font-extrabold uppercase tracking-wider text-slate-800">
-              Líderes en Trade Marketing, BTL & Retail de Vanguardia
+            <span className="text-xs sm:text-[13px] font-extrabold uppercase tracking-wider text-slate-900">
+              Líderes en Trade Marketing · BTL & Retail de Vanguardia
             </span>
-            <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-sky-100 text-sky-800 font-mono">
-              12 Años
+            <span className="text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-sky-100 text-sky-800 font-mono">
+              12 Años de Trayectoria
             </span>
           </div>
 
@@ -207,6 +207,20 @@ export default function Hero({ onOpenQuoteModal }) {
           <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed font-normal">
             Diseñamos, implementamos y gestionamos soluciones de visibilidad, branding y ejecución comercial para marcas que buscan destacar en el punto de venta. Con <strong className="font-semibold text-slate-900">cobertura nacional</strong> y <strong className="font-semibold text-[#55A2DC]">resultados medibles</strong>.
           </p>
+
+          {/* Callout de Métrica Estrella +38.4% Sell-Out */}
+          <div className="inline-flex items-center gap-3.5 px-5 py-2.5 rounded-2xl bg-gradient-to-r from-sky-50 via-blue-50/80 to-indigo-50 border border-sky-300/80 shadow-sm text-left mx-auto">
+            <div className="flex items-center justify-center w-11 h-11 rounded-xl bg-gradient-to-br from-[#55A2DC] to-[#2563EB] text-white font-black text-xl shadow-md shrink-0">
+              🏆
+            </div>
+            <div>
+              <div className="flex items-baseline gap-2">
+                <span className="text-2xl sm:text-3xl font-black text-[#2563EB] font-display tracking-tight">+38.4%</span>
+                <span className="text-xs sm:text-sm font-black uppercase tracking-wide text-slate-900">Sell-Out Promedio Comprobado</span>
+              </div>
+              <p className="text-[11px] text-slate-600 font-medium">Aceleración de rotación de producto en Falabella, Ripley, Hiraoka y Oechsle</p>
+            </div>
+          </div>
 
           {/* Botonera de Acción Principal */}
           <div className="flex flex-wrap items-center justify-center gap-3.5 pt-1">
@@ -563,23 +577,23 @@ export default function Hero({ onOpenQuoteModal }) {
         <div className="mt-14 pt-8 border-t border-slate-200/80">
           
           {/* Marcas Globales que Confían en SoloPromo */}
-          <div className="mb-8 text-center">
-            <p className="text-[11px] font-extrabold uppercase tracking-widest text-slate-500 mb-4">
+          <div className="mb-10 text-center">
+            <p className="text-xs sm:text-[13px] font-extrabold uppercase tracking-widest text-slate-600 mb-4">
               Socios estratégicos de los gigantes tecnológicos y corporativos líderes en el Perú
             </p>
-            <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-5">
+            <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
               {HERO_CLIENT_LOGOS.map((client, cIdx) => (
                 <div 
                   key={cIdx} 
-                  className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-slate-200/80 shadow-2xs hover:border-[#55A2DC] hover:shadow-md transition-all hover:scale-105 duration-200 group cursor-default"
+                  className="flex items-center gap-3 px-4 py-2 sm:px-4.5 sm:py-2.5 rounded-2xl bg-white border border-slate-200/90 shadow-2xs hover:border-[#55A2DC] hover:shadow-md transition-all hover:scale-105 duration-200 group cursor-default"
                   title={client.name}
                 >
                   <img 
                     src={client.logo} 
-                    alt={client.name} 
-                    className="w-5 h-5 rounded-full object-contain" 
+                    alt={`Logotipo oficial de ${client.name}`} 
+                    className="w-7 h-7 sm:w-8 sm:h-8 rounded-full object-contain p-0.5 bg-slate-50 border border-slate-100" 
                   />
-                  <span className="text-xs font-bold text-slate-700 group-hover:text-slate-950">
+                  <span className="text-xs sm:text-sm font-extrabold text-slate-800 group-hover:text-slate-950">
                     {client.name}
                   </span>
                 </div>
@@ -587,20 +601,38 @@ export default function Hero({ onOpenQuoteModal }) {
             </div>
           </div>
 
-          {/* 4 Métricas de Vanguardia */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3.5 sm:gap-5 text-center">
-            {COMPANY_INFO.metrics.map((m, idx) => (
-              <div 
-                key={idx} 
-                className="p-4 sm:p-5 rounded-2xl bg-white border border-slate-200/90 shadow-xs hover:border-[#55A2DC]/60 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group cursor-default"
-              >
-                <div className="text-3xl sm:text-4xl font-display font-extrabold text-[#55A2DC] tracking-tight group-hover:scale-105 transition-transform duration-200">
-                  {m.value}
+          {/* 4 Métricas de Vanguardia con +38.4% como Estrella Principal */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 text-center">
+            {COMPANY_INFO.metrics.map((m, idx) => {
+              const isHeroMetric = idx === 0;
+              return (
+                <div 
+                  key={idx} 
+                  className={`p-5 sm:p-6 rounded-2xl transition-all duration-300 group cursor-default relative overflow-hidden ${
+                    isHeroMetric
+                      ? 'bg-gradient-to-br from-sky-50 via-white to-blue-50 border-2 border-[#55A2DC] shadow-xl shadow-sky-500/15 ring-4 ring-sky-100/80 -translate-y-1'
+                      : 'bg-white border border-slate-200/90 shadow-xs hover:border-[#55A2DC]/60 hover:shadow-xl hover:-translate-y-1'
+                  }`}
+                >
+                  {isHeroMetric && (
+                    <div className="absolute top-2.5 right-2.5 px-2 py-0.5 rounded-full bg-gradient-to-r from-[#55A2DC] to-[#2563EB] text-white text-[9px] font-black uppercase tracking-wider shadow-xs">
+                      ★ Métrica Estrella
+                    </div>
+                  )}
+                  <div className={`font-display font-black tracking-tight group-hover:scale-105 transition-transform duration-200 ${
+                    isHeroMetric 
+                      ? 'text-4xl sm:text-5xl lg:text-[3.2rem] text-transparent bg-clip-text bg-gradient-to-r from-[#0284C7] via-[#2563EB] to-[#1D4ED8] leading-tight my-1' 
+                      : 'text-3xl sm:text-4xl text-[#55A2DC]'
+                  }`}>
+                    {m.value}
+                  </div>
+                  <div className={`text-xs sm:text-sm font-bold mt-1.5 ${isHeroMetric ? 'text-slate-950 font-black' : 'text-slate-800'}`}>
+                    {m.label}
+                  </div>
+                  <div className="text-[11px] text-slate-500 mt-0.5 leading-snug">{m.detail}</div>
                 </div>
-                <div className="text-xs sm:text-sm font-bold text-slate-800 mt-1">{m.label}</div>
-                <div className="text-[11px] text-slate-500 mt-0.5">{m.detail}</div>
-              </div>
-            ))}
+              );
+            })}
           </div>
 
         </div>

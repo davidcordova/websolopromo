@@ -27,7 +27,7 @@ export default function ClientsMarquee() {
   };
 
   return (
-    <section id="clientes" className="py-24 relative bg-slate-50/90 border-y border-slate-200/80 overflow-hidden">
+    <section id="clientes" className="py-20 sm:py-24 relative bg-slate-50/90 border-y border-slate-200/80 overflow-hidden">
       
       {/* Resplandores ambientales de fondo */}
       <div className="absolute top-1/3 left-1/4 w-[550px] h-[550px] bg-[#55A2DC]/8 rounded-full blur-[140px] pointer-events-none" />
@@ -62,19 +62,19 @@ export default function ClientsMarquee() {
 
       {/* =========================================================================
           1. CARRUSEL INFINITO (MARQUEE) DE MARCAS
-          - Solo los logotipos enteros, circulares, sin textos cortados ni saturación
+          - Logotipos enteros, ampliados, de alto impacto visual y sin cortes
           ========================================================================= */}
       <div className="relative w-full overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_96px,_black_calc(100%-96px),transparent_100%)] mb-16">
-        <div className="flex w-max animate-marquee space-x-6 sm:space-x-8 py-4 items-center">
+        <div className="flex w-max animate-marquee space-x-6 sm:space-x-10 py-6 items-center">
           {marqueeItems.map((client, idx) => (
             <div
               key={idx}
               onClick={() => setSelectedClientId(client.id)}
               title={`Ver caso operativo de ${client.name}`}
-              className="w-28 h-28 sm:w-32 sm:h-32 rounded-2xl bg-white hover:bg-slate-50 border border-slate-200/90 hover:border-[#55A2DC] transition-all duration-300 shadow-xs hover:shadow-xl hover:-translate-y-1.5 flex items-center justify-center p-3 shrink-0 group cursor-pointer shine-hover"
+              className="w-40 h-40 sm:w-48 sm:h-48 md:w-52 md:h-52 rounded-3xl bg-white hover:bg-slate-50 border-2 border-slate-200/90 hover:border-[#55A2DC] transition-all duration-300 shadow-sm hover:shadow-2xl hover:-translate-y-2 flex items-center justify-center p-4 shrink-0 group cursor-pointer shine-hover"
             >
-              {/* LOGOTIPO COMPLETO, ENTERO Y SIN RECORTES */}
-              <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden p-1 drop-shadow-md group-hover:scale-110 transition-transform duration-300">
+              {/* LOGOTIPO COMPLETO, ENTERO Y AMPLIADO */}
+              <div className="relative w-32 h-32 sm:w-40 sm:h-40 rounded-2xl overflow-hidden p-2 drop-shadow-md group-hover:scale-110 transition-transform duration-300 flex items-center justify-center bg-slate-50/50">
                 <img
                   src={client.logo}
                   alt={`Logotipo oficial de ${client.name}`}
@@ -197,8 +197,8 @@ export default function ClientsMarquee() {
             <div className="lg:col-span-7 flex flex-col justify-center">
               
               {/* Encabezado de la Ficha con Logo y Nombres */}
-              <div className="flex items-center gap-4 mb-4">
-                <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-white p-1.5 shrink-0 drop-shadow-md ring-2 ring-[#55A2DC]/50 flex items-center justify-center border border-slate-100">
+              <div className="flex items-center gap-4 sm:gap-5 mb-5">
+                <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl bg-white p-2.5 shrink-0 drop-shadow-lg ring-2 ring-[#55A2DC]/60 flex items-center justify-center border border-slate-200">
                   <img
                     src={selectedClient.logo}
                     alt={`Logo oficial de ${selectedClient.name}`}

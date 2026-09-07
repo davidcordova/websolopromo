@@ -124,7 +124,7 @@ export default function PortfolioSection() {
   ];
 
   return (
-    <section id="proyectos" className="py-24 relative bg-slate-50/70 border-t border-slate-200/80">
+    <section id="proyectos" className="py-20 sm:py-24 relative bg-slate-50/70 border-t border-slate-200/80">
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
@@ -188,11 +188,12 @@ export default function PortfolioSection() {
 
                 {/* Contenido */}
                 <div className="p-5 space-y-2">
-                  <div className="flex items-center justify-between">
+                  <div className="flex items-center justify-between gap-1">
                     <span className="text-[10px] font-bold uppercase tracking-wider text-[#55A2DC]">
                       {project.categoryLabel}
                     </span>
-                    <span className="text-[10px] font-extrabold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200 font-mono">
+                    <span className="inline-flex items-center gap-1 text-[10px] font-extrabold text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200 font-mono shadow-2xs">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
                       {project.result}
                     </span>
                   </div>
@@ -205,10 +206,12 @@ export default function PortfolioSection() {
                 </div>
               </div>
 
-              {/* Pie de tarjeta con cliente y alcance */}
-              <div className="px-5 pb-5 pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500 bg-slate-50/50">
+              {/* Pie de tarjeta con cliente y badge de impacto */}
+              <div className="px-5 pb-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500 bg-slate-50/50">
                 <span className="font-bold text-slate-800">{project.client}</span>
-                <span className="text-[11px] truncate max-w-[140px] text-slate-500 font-medium">{project.scope}</span>
+                <span className="text-[10px] font-bold text-sky-700 bg-sky-50 px-2 py-0.5 rounded-md border border-sky-100">
+                  {project.metricBadge}
+                </span>
               </div>
             </div>
           ))}

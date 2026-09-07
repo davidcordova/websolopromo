@@ -9,7 +9,7 @@ export default function InfrastructureSection() {
   const icons = [Users, Building2, MonitorCheck, GraduationCap];
 
   return (
-    <section id="infraestructura" className="py-24 relative bg-white border-t border-slate-200/80">
+    <section id="infraestructura" className="py-20 sm:py-24 relative bg-white border-t border-slate-200/80">
       
       {/* Glow ambiental suave */}
       <div className="absolute top-10 right-10 w-80 h-80 bg-[#55A2DC]/8 rounded-full blur-[130px] pointer-events-none"></div>
